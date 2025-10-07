@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     % 1. Definição dos Acionistas
     A1["Lenita R. do Prado (15%)"]
@@ -38,4 +39,5 @@ graph TD
     B --> C5
 
     % Estilo da caixa principal
-    style B fill:#f9f,stroke:#333,stroke-width:2px# Organograma
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+   ```
