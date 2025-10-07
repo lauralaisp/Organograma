@@ -1,43 +1,56 @@
 ```mermaid
-graph TD
-    % 1. Definição dos Acionistas
-    A1["Lenita R. do Prado (15%)"]
-    A2["Carlos Prado Filho (15%)"]
-    A3["Antônio M. R. do Prado (15%)"]
-    A4["Marilena R. do Prado (15%)"]
-    A5["Mariana B. Prado (5%)"]
-    A6["José R. Prado Filho (5%)"]
-    A7["Amanda P. Teixeira (4,37%)"]
-    A8["Giulia P. Teixeira (4,37%)"]
-    A9["José Carlos P. Sombra (4,37%)"]
-    A10["Guido A. Prado (4,37%)"]
-    A11["Taís A. Prado (4,37%)"]
-    A12["Lara A. Prado (4,37%)"]
-    A13["Adriana R. do Prado (1,89%)"]
-    A14["José Luís R. do Prado (1,89%)"]
+flowchart TD
+    %% Definições de estilo
+    classDef verde fill:#006b3c,stroke:#004d26,color:#ffffff,font-weight:bold,stroke-width:1px;
 
-    % 2. Definição da Holding e Subsidiárias
-    B(Itaueira Agropecuária S/A)
-    C1(ITAUEIRA NEGÓCIOS IMOBILIÁRIOS LTDA.)
-    C2(ITAUEIRA COMERCIAL LTDA.)
-    C3(ITAUEIRA CAMARÕES LTDA.)
-    C4(ITAUEIRA IMOBILIÁRIAS LTDA.)
-    C5(ITAUEIRA INDUSTRIAL LTDA.)
+    %% Acionistas
+    A1["Amanda Prado Teixeira<br/>(4,37%)"]:::verde
+    A2["Giulia Prado Teixeira<br/>(4,37%)"]:::verde
+    A3["José Carlos Prado Sombra<br/>(4,37%)"]:::verde
+    A4["Adriana Ribeiro do Prado<br/>(1,89%)"]:::verde
+    A5["Lenita Ribeiro do Prado<br/>(15,00%)"]:::verde
+    A6["Carlos Prado Filho<br/>(15,00%)"]:::verde
+    A7["Antônio Marcos Ribeiro do Prado<br/>(15,00%)"]:::verde
+    A8["Guido Aderaldo Prado<br/>(4,37%)"]:::verde
+    A9["Taís Aderaldo Prado<br/>(4,37%)"]:::verde
+    A10["Lara Aderaldo Prado<br/>(4,37%)"]:::verde
+    A11["José Luís Ribeiro do Prado<br/>(1,89%)"]:::verde
+    A12["Marilena Ribeiro do Prado<br/>(15,00%)"]:::verde
+    A13["Mariana Bianchim Prado<br/>(5,00%)"]:::verde
+    A14["José Roberto Prado Filho<br/>(5,00%)"]:::verde
 
-    % 3. Conexões
-    % Cria a linha horizontal de acionistas
-    A1 --- A2 --- A3 --- A4 --- A5 --- A6 --- A7 --- A8 --- A9 --- A10 --- A11 --- A12 --- A13 --- A14
-    
-    % Conecta a linha de acionistas (a partir de um nó central) à Holding
-    A7 --> B
-    
-    % Conecta a Holding às suas subsidiárias
-    B --> C1
-    B --> C2
-    B --> C3
-    B --> C4
-    B --> C5
+    %% Controladora
+    ITA["ITAUEIRA AGROPECUÁRIA S.A.<br/>(Companhia Fechada)"]:::verde
 
-    % Estilo da caixa principal
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-   ```
+    %% Subsidiárias
+    S1["Itaueira Negócios Imobiliários Ltda."]:::verde
+    S2["Itaueira Comercial Ltda."]:::verde
+    S3["Itaueira Camarões Ltda."]:::verde
+    S4["Itaueira Imobiliárias Ltda."]:::verde
+    S5["Itaueira Industrial Ltda."]:::verde
+
+    %% Agrupamento visual (acionistas em linha)
+    A1 --- ITA
+    A2 --- ITA
+    A3 --- ITA
+    A4 --- ITA
+    A5 --- ITA
+    A6 --- ITA
+    A7 --- ITA
+    A8 --- ITA
+    A9 --- ITA
+    A10 --- ITA
+    A11 --- ITA
+    A12 --- ITA
+    A13 --- ITA
+    A14 --- ITA
+
+    ITA --- S1
+    ITA --- S2
+    ITA --- S3
+    ITA --- S4
+    ITA --- S5
+
+    %% Forçar linhas retas (sem curvas e sem setas)
+    linkStyle default stroke:#004d26,stroke-width:1.5px,fill:none;
+```
